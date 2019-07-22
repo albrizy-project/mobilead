@@ -1,0 +1,39 @@
+
+ext.config = [
+    minSdkVersion: 17,
+    targetSdkVersion: 28,
+    versionCode: 1,
+    versionName: '1.0',
+
+    appcompat: 'com.android.support:appcompat-v7:28.0.0',
+    okhttp: 'com.squareup.okhttp3:okhttp:3.14.0',
+    gson: 'com.google.code.gson:gson:2.8.5',
+
+    admob: 'com.google.android.gms:play-services-ads:17.2.0',
+    startapp: 'com.startapp:inapp-sdk:3.10.1',
+]
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs '../internal/libs'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
