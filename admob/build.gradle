@@ -28,5 +28,5 @@ dependencies {
     implementation config.appcompat
     implementation config.gson
     implementation config.admob
-    implementation project(':core')
+    //implementation project(':core')
 }
